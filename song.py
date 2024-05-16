@@ -35,7 +35,7 @@ if st.button('Predict'):
     try:
         # Send request to the model server
         response = requests.post(
-            url="http://104.131.17.187:5002/invocations",
+            url=f"http://104.131.17.187:5002/invocations",
             data=payload,
             headers={"Content-Type": "application/json"},
         )
