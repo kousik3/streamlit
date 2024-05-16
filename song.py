@@ -63,4 +63,4 @@ if st.button('Predict'):
         st.error(f"Request failed: {e}")
 
     # Print the URL being used
-    st.write(f"Request URL: http://104.131.17.187:5002/invocations")
+    st.write(f"Request URL: http://142.93.180.69:5001/invocations")
