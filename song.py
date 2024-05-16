@@ -53,9 +53,14 @@ if st.button('Predict'):
                 st.title(f'Song popularity by like: {regression_prediction:.2f}')
             else:
                 st.error("The response does not contain 'predictions'")
+        elif response.status_code == 404:
+            st.error("Endpoint not found. Please check the URL and try again.")
         else:
             st.error(f"Failed to get a valid response. Status code: {response.status_code}")
             st.write(response.text)  # Print the response content for debugging
 
     except requests.exceptions.RequestException as e:
         st.error(f"Request failed: {e}")
+
+    # Print the URL being used
+    st.write(f"Request URL: http://104.131.17.187:5002/invocations")
