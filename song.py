@@ -30,7 +30,7 @@ st.write(options)
 
 if st.button('Predict'):
     # Prepare payload for prediction
-    payload = json.dumps({'dataframe_records': options})
+    payload = json.dumps({'dataframe_records': [[item for item in options.values()]]})
 
     try:
         # Send request to the model server
