@@ -1,64 +1,18 @@
 {
-    "danceability": [
-      -3.739544,
-      2.140572
-    ],
-    "energy": [
-      -2.964931,
-      1.706496
-    ],
-    "key": [
-      -1.483089,
-      1.591509
-    ],
-    "loudness": [
-      -8.301976,
-      1.774811
-    ],
-    "speechiness": [
-      -0.872184,
-      7.892528
-    ],
-    "acousticness": [
-      -1.013576,
-      2.473564
-    ],
-    "instrumentalness": [
-      -0.291148,
-      4.872441
-    ],
-    "liveness": [
-      -1.068171,
-      4.842224
-    ],
-    "valence": [
-      -2.146432,
-      1.885683
-    ],
-    "tempo": [
-      -4.076567,
-      4.155610
-    ],
-    "duration_ms": [
-      -6.216511,
-      9.912742
-    ],
-    "views": [
-      -5.693374,
-      2.401183
-    ],
-    "comments": [
-      -2.836877,
-      3.053411
-    ],
-    "licensed": [
-        "No",
-        "Yes"
-    ],
-  
-    "official_video": [
-        "No",
-        "Yes"
-    ]
-  }
-  
+  "danceability": [0.00, 0.97],
+  "energy": [0.00, 1.00],
+  "key": [0.00, 11.00],
+  "loudness": [-46.25, 0.56],
+  "speechiness": [0.00, 0.96],
+  "acousticness": [0.00, 1.00],
+  "instrumentalness": [0.00, 1.00],
+  "liveness": [0.01, 1.00],
+  "valence": [0.00, 0.99],
+  "tempo": [0.00, 243.37],
+  "duration_ms": [10.34, 15.34],
+  "views": [0.00, 22.81],
+  "comments": [0.00, 16.03],
+  "licensed": ["No","Yes"],
+  "official_video": ["No","Yes"],
+}
+
