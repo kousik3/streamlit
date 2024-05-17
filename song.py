@@ -11,13 +11,13 @@ st.subheader('Shuvam Chatterjee')
 st.subheader('Saahithi Chippa')
 
 # Load options from JSON file
-yesOrNoKeys = []
+yesOrNoKeys = ['licensed', 'official_video']
 with open('input_options.json') as f:
     side_bar_options = json.load(f)
     options = {}
     for key, value in side_bar_options.items():
         if key in yesOrNoKeys:
-            options[key] = st.sidebar.selectbox(key, value)
+            options[key] = st.sidebar.selectbox(key, ['No', 'Yes'])
         else:
             min_val, max_val = value
             min_val = float(min_val)
@@ -26,11 +26,18 @@ with open('input_options.json') as f:
             step_size = 1.0
             options[key] = st.sidebar.slider(key, min_val, max_val, current_value, step_size)
 
-st.write(options)
+# Convert 'Yes'/'No' to 1/0 for the model
+options['licensed'] = 1 if options['licensed'] == 'Yes' else 0
+options['official_video'] = 1 if options['official_video'] == 'Yes' else 0
+
+st.write("User input options:", options)
 
 if st.button('Predict'):
     # Prepare payload for prediction
-    payload = json.dumps({'dataframe_records': [[item for item in options.values()]]})
+    payload = json.dumps({'dataframe_records': [list(options.values())]})
+    
+    # Debugging: Print the payload being sent to the server
+    st.write("Payload being sent:", payload)
 
     try:
         # Send request to the model server
@@ -39,13 +46,16 @@ if st.button('Predict'):
             data=payload,
             headers={"Content-Type": "application/json"},
         )
-        st.write(response.json())
+        
+        # Debugging: Print the raw response
+        st.write("Raw response:", response.text)
+
         # Check the response status
         if response.status_code == 200:
             response_json = response.json()
             
             # Debugging: Print the JSON response to see its structure
-            st.write(response_json)
+            st.write("Response JSON:", response_json)
             
             # Check if the 'predictions' key exists in the response
             if 'predictions' in response_json:
