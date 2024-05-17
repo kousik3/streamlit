@@ -39,7 +39,7 @@ if st.button('Predict'):
             data=payload,
             headers={"Content-Type": "application/json"},
         )
-        
+        st.write(response.json())
         # Check the response status
         if response.status_code == 200:
             response_json = response.json()
