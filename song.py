@@ -11,7 +11,7 @@ st.subheader('Shuvam Chatterjee')
 st.subheader('Saahithi Chippa')
 
 # Load options from JSON file
-yesOrNoKeys = ['licensed', 'official_video']
+yesOrNoKeys = []
 with open('input_options.json') as f:
     side_bar_options = json.load(f)
     options = {}
